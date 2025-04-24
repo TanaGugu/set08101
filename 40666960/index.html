@@ -3,16 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imgs/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
-    <title>Document</title>
+    <title>Beastly Bonds</title>
 </head>
 <body>
-    <section>
-        <div class="hero">
-            <h1 class="header">watafak</h1>
+    <header class="padding-block | bg-neutral-100 | text-primary-900">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#"><img class="svg" src="imgs/the-cow-svgrepo-com.svg" alt="BeastyBonds"></a>
+                <button class="mobile-nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+                    <img class="icon-hamburger svg" src="imgs/icon-hamburger.svg" alt="" aria-hidden="true">
+                    <img class="icon-closed svg" src="imgs/icon-closed.svg" alt="" aria-hidden="true">
+                    <span class="sr-only">Menu</span>
+                </button> 
+                <nav class="primary-nav" id="primary-nav">
+                    <ul class="nav-list" role="list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </nav>
+                <button class="button | display-sm-none | display-md-inline-flex">Take Quiz</button>
+            </div>
         </div>
-        <div class="gallery" id="cardContainer"></div>
-    </section>
+    </header>
+    <main>
+        <section class="padding-block | bg-neutral-100 | text-primary-900">
+            <div class="container">
+                <div class="even-columns">
+                    <div class="flow">
+                        <h1 class="fs-primary-heading | fw-bold">Welcome to The Jungle</h1>
+                        <p>Step into a jungle full of charm, chaos, and cuddly creatures. From sassy parrots to chill hippos, playful monkeys to snuggly tigers — they’re all ready to be adopted and adored!</p>
+                        <button class="button">Take Quiz</button>
+                    </div>
+                    <div>
+                        <img src="imgs/39a61f4af24789fe405879ad91d86d3a.png" alt="monkeys">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="padding-block | bg-accent-100 | text-neutral-100">
+            <div class="container">
+                <div class="even-columns">
+                    <div>
+                        <img src="imgs/94cf1a18a43fa983fa6cf1239cea9a6f.png" alt="monkeys">
+                    </div>
+                    <div>
+                        <div class="flow">
+                            <h2 class="fs-secondary-heading fw-bold">Meet Bongo</h2>
+                        <p>Bongo sat alone on a rocky outcrop, ears pinned back, stunned by how different everyone else seemed. He felt like that stray nut nobody wanted. Until one day, he cracked open a special banana and discovered an entire troupe waiting with cheers—just for him. His jaws unhinged in joyful surprise, Bongo realized that sometimes, the scariest leap brings you exactly where you belong. Join us and find your perfect community—you might be surprised how quickly you’ll fit right in.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="padding-block | bg-neutral-100 | text-neutral-100">
+            <div class="container | gallery" id="gallery-grid">
+                <div class="card | bg-accent-100">
+                    <img src="imgs/bonnet-macaque-sitting-railing-holding-green-coconut.jpg" alt="animal image">
+                    <h3>biba</h1>
+                </div>
+                <div class="card | bg-accent-900">
+                    <img src="imgs/monkey-sitting-wooden-fence (1).jpg" alt="animal image">
+                    <h3>bobik</h1>
+                </div>
+                <div class="card | bg-accent-900">
+                    <img src="imgs/portrait-long-tailed-macaque.jpg" alt="animal image">
+                    <h3>sisya</h1>
+                </div>
+                <div class="card | bg-accent-900">
+                    <img src="imgs/cute-young-capuchin-monkey-eating-yellow-fruit-looking-side.jpg" alt="animal image">
+                    <h3>dypka</h1>
+                </div>
+                <div class="card | bg-accent-900">
+                    <img src="imgs/bonnet-macaque-sitting-railing-holding-green-coconut.jpg" alt="animal image">
+                    <h3>lyxo</h1>
+                </div>
+                <div class="card | bg-accent-900">
+                    <img src="imgs/monkey-sitting-wooden-fence (1).jpg" alt="animal image">
+                    <h3>pisyn</h1>
+                </div>
+                <div class="card | bg-accent-900">
+                    <img src="imgs/portrait-long-tailed-macaque.jpg" alt="animal image">
+                    <h3>sisya</h1>
+                </div>
+                <div class="card | bg-accent-900">
+                    <img src="imgs/cute-young-capuchin-monkey-eating-yellow-fruit-looking-side.jpg" alt="animal image">
+                    <h3>bob</h1>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="padding-block | bg-neutral-900 | text-neutral-100">
+        <div class="container | text-center">
+            <div class="socials-wrapper">
+                <ul class="" role="list" aria-label="social links">
+                    <li><a aria-label="instagram" href="#">
+                        <img src="imgs/icons8-instagram.svg" alt="">
+                    </a></li>
+                    <li><a aria-label="facebook" href="#">
+                        <img src="imgs/icons8-facebook.svg" alt="">
+                    </a></li>
+                    <li><a aria-label="youtube" href="#">
+                        <img src="imgs/icons8-youtube.svg" alt="">
+                    </a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-wrapper">
+                <nav class="footer-navigation">
+                    <ul class="nav-list" role="list" aria-label="footer" >
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p>© BeastyBonds</p>
+        </div>
+    </footer>
+    <script src="nav.js"></script>
 </body>
 </html>

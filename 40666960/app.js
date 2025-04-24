@@ -1,26 +1,41 @@
+ document.addEventListener("DOMContentLoaded", async () => {
 
-document.addEventListener("DOMContentLoaded", () => {
-    const cardData = [
-        { name: "Suzie", img: "imgs/portrait-long-tailed-macaque.jpg" },
-        { name: "Max", img: "imgs/bonnet-macaque-sitting-railing-holding-green-coconut.jpg" },
-        { name: "Luna", img: "imgs/cute-young-capuchin-monkey-eating-yellow-fruit-looking-side.jpg" },
-        { name: "Bella", img: "imgs/monkey-sitting-wooden-fence (1).jpg" },
-        { name: "Suzie", img: "imgs/portrait-long-tailed-macaque.jpg" },
-        { name: "Max", img: "imgs/bonnet-macaque-sitting-railing-holding-green-coconut.jpg" },
-        { name: "Luna", img: "imgs/cute-young-capuchin-monkey-eating-yellow-fruit-looking-side.jpg" },
-        { name: "Bella", img: "imgs/monkey-sitting-wooden-fence (1).jpg" }
-    ];
+    const animalCardData = await fetchAnimalsByCategory()
+    const cardContainer = document.getElementById("gallery-grid")
 
-    const cardContainer = document.getElementById("cardContainer");
+    animalCardData.forEach(animal => {
+    
+        const card = document.createElement("div")
+        card.classList.add("gallery-item")
 
-    cardData.forEach(item => {
-        const card = document.createElement("div");
-        card.classList.add("profile-card");
-        card.innerHTML = `
-            <h2 class="card-header">${item.name}</h2>
-            <img src="${item.img}" alt="${item.name}" class="card-image">
-        `;
+        if (animal.status === 'ADOPTED') {
+            
+        }
+        card.innerHTML = 
+        `
+            <h1>${animal.name}</h1>
+            <img src=${animal.img_url} alt="animal image">
 
-        cardContainer.appendChild(card);
-    });
-});
+
+        `
+        cardContainer.appendChild(card)
+    })
+})
+
+async function fetchAnimalsByCategory(){
+    try{
+        // const category = document.getElementById("category").value.toLowerCase()
+        const category = "mammal"
+        const response = await fetch(`http://localhost:8080/api/v1/animals?category=${category}`)
+    
+        if (!response.ok){
+            throw new Error("Somethdifsds")
+        }
+
+        const animals = await response.json()
+        return animals
+
+    }catch(error){
+        console.error(error)
+    }
+}
