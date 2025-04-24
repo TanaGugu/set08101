@@ -1,0 +1,192 @@
+[
+  {
+    "name": "Leo",
+    "images": [
+      "images/leopard-gecko.jpg"
+    ],
+    "description": "Leo is a gentle Leopard Gecko. Great for beginners and very low maintenance.",
+    "tags": [
+      "Beginner Friendly",
+      "Handleable",
+      "Nocturnal"
+    ],
+    "care": {
+      "Habitat": "10-20 gallon tank with hides and heat mat.",
+      "Diet": "Insects (crickets, mealworms) dusted with calcium.",
+      "Temperature": "88-92\u00b0F on warm side, 75\u00b0F on cool side.",
+      "Lifespan": "10-20 years"
+    },
+    "audio": "audio/leopard-gecko.mp3"
+  },
+  {
+    "name": "Blaze",
+    "images": [
+      "images/blaze-corn-snake.jpg"
+    ],
+    "description": "Blaze is a friendly Corn Snake. Loves to explore and is very easy to handle.",
+    "tags": [
+      "Beginner Friendly",
+      "Escape Artist",
+      "Docile"
+    ],
+    "care": {
+      "Habitat": "20+ gallon tank with hiding spots.",
+      "Diet": "Frozen/thawed rodents.",
+      "Temperature": "85\u00b0F basking, 75\u00b0F ambient.",
+      "Lifespan": "15-20 years"
+    },
+    "audio": "audio/corn-snake.mp3"
+  },
+  {
+    "name": "Spike",
+    "images": [
+      "images/bearded-dragon.jpg"
+    ],
+    "description": "Spike is a social Bearded Dragon who enjoys basking and being held.",
+    "tags": [
+      "Handleable",
+      "Beginner Friendly",
+      "Diurnal"
+    ],
+    "care": {
+      "Habitat": "40+ gallon tank with UVB lighting.",
+      "Diet": "Veggies, greens, and insects.",
+      "Temperature": "95-105\u00b0F basking, 75\u00b0F cool side.",
+      "Lifespan": "10-12 years"
+    },
+    "audio": "audio/bearded-dragon.mp3"
+  },
+  {
+    "name": "Monty",
+    "images": [
+      "images/ball-python.jpg"
+    ],
+    "description": "Monty is a calm Ball Python. Perfect for a first-time snake owner.",
+    "tags": [
+      "Docile",
+      "Nocturnal",
+      "Introvert Friendly"
+    ],
+    "care": {
+      "Habitat": "30-40 gallon tank with humidity control.",
+      "Diet": "Frozen rodents weekly.",
+      "Temperature": "88-92\u00b0F warm side, 78\u00b0F cool side.",
+      "Lifespan": "20-30 years"
+    },
+    "audio": "audio/ball-python.mp3"
+  },
+  {
+    "name": "Pogo",
+    "images": [
+      "images/crested-gecko.jpg"
+    ],
+    "description": "Pogo is a lively Crested Gecko with a climbing obsession.",
+    "tags": [
+      "Nocturnal",
+      "Beginner Friendly",
+      "Low Maintenance"
+    ],
+    "care": {
+      "Habitat": "20-gallon tall tank with climbing vines.",
+      "Diet": "Crested gecko diet & occasional insects.",
+      "Temperature": "72-78\u00b0F, no additional heat needed.",
+      "Lifespan": "15-20 years"
+    },
+    "audio": "audio/crested-gecko.mp3"
+  },
+  {
+    "name": "Tango",
+    "images": [
+      "images/blue-tongued-skink.jpg"
+    ],
+    "description": "Tango is a bold Blue-Tongued Skink who loves head scratches.",
+    "tags": [
+      "Handleable",
+      "Diurnal",
+      "Intermediate"
+    ],
+    "care": {
+      "Habitat": "40-gallon long tank with substrate for burrowing.",
+      "Diet": "Vegetables, insects, and protein.",
+      "Temperature": "95\u00b0F basking, 75\u00b0F cool side.",
+      "Lifespan": "15-20 years"
+    },
+    "audio": "audio/skink.mp3"
+  },
+  {
+    "name": "Shelly",
+    "images": [
+      "images/russian-tortoise.jpg"
+    ],
+    "description": "Shelly is a chill Russian Tortoise with a long life ahead.",
+    "tags": [
+      "Long Lifespan",
+      "Herbivore",
+      "Outdoor Friendly"
+    ],
+    "care": {
+      "Habitat": "Outdoor pen or 50-gallon indoor setup.",
+      "Diet": "Leafy greens and weeds.",
+      "Temperature": "75-85\u00b0F, with basking at 90\u00b0F.",
+      "Lifespan": "40-50 years"
+    },
+    "audio": "audio/russian-tortoise.mp3"
+  },
+  {
+    "name": "Stripe",
+    "images": [
+      "images/king-snake.jpg"
+    ],
+    "description": "Stripe is a curious King Snake who loves exploring her habitat.",
+    "tags": [
+      "Escape Artist",
+      "Active",
+      "Nocturnal"
+    ],
+    "care": {
+      "Habitat": "20-30 gallon escape-proof tank.",
+      "Diet": "Frozen mice weekly.",
+      "Temperature": "84-90\u00b0F warm, 72-75\u00b0F cool.",
+      "Lifespan": "15-25 years"
+    },
+    "audio": "audio/king-snake.mp3"
+  },
+  {
+    "name": "Grizzle",
+    "images": [
+      "images/gargoyle-gecko.jpg"
+    ],
+    "description": "Grizzle is a moody Gargoyle Gecko with incredible patterns.",
+    "tags": [
+      "Nocturnal",
+      "Arboreal",
+      "Unique Colors"
+    ],
+    "care": {
+      "Habitat": "Vertical terrarium with plants and branches.",
+      "Diet": "Fruit-based gecko diet + insects.",
+      "Temperature": "72-78\u00b0F, no extra heat needed.",
+      "Lifespan": "15-20 years"
+    },
+    "audio": "audio/gargoyle-gecko.mp3"
+  },
+  {
+    "name": "Splash",
+    "images": [
+      "images/red-eared-slider.jpg"
+    ],
+    "description": "Splash is a playful Red-Eared Slider who enjoys swimming and sunbathing.",
+    "tags": [
+      "Aquatic",
+      "Sun-Loving",
+      "Energetic"
+    ],
+    "care": {
+      "Habitat": "Large aquatic tank with basking area.",
+      "Diet": "Pellets, leafy greens, insects.",
+      "Temperature": "75\u00b0F water, 90\u00b0F basking spot.",
+      "Lifespan": "20-30 years"
+    },
+    "audio": "audio/red-eared-slider.mp3"
+  }
+]

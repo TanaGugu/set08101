@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reptile Match Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .quiz-step {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+        .quiz-step h2 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .quiz-step label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<!-- Hero Header with Background -->
+<section class="hero-header">
+    <img src="images/reptile-banner.jpg" alt="Reptile Banner" class="hero-bg" />
+    <div class="hero-overlay">
+        <div class="main-header">
+            <div class="logo">Beastly Bonds</div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="catalog.html">Reptile Catalog</a>
+                <a href="quiz.html">Find Your Match</a>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="quiz-container">
+    <form id="quizForm">
+        <!-- Start of 20 Questions -->
+        <div class="quiz-step">
+            <h2>1. What size reptile do you prefer?</h2>
+            <label><input type="radio" name="size" value="Small"> Small</label>
+            <label><input type="radio" name="size" value="Medium"> Medium</label>
+            <label><input type="radio" name="size" value="Large"> Large</label>
+        </div>
+        <div class="quiz-step">
+            <h2>2. Do you want a pet that enjoys being handled?</h2>
+            <label><input type="radio" name="handle" value="Yes"> Yes</label>
+            <label><input type="radio" name="handle" value="No"> No</label>
+        </div>
+        <div class="quiz-step">
+            <h2>3. How much time can you dedicate to care daily?</h2>
+            <label><input type="radio" name="care_time" value="Low"> Low</label>
+            <label><input type="radio" name="care_time" value="Moderate"> Moderate</label>
+            <label><input type="radio" name="care_time" value="High"> High</label>
+        </div>
+        <div class="quiz-step">
+            <h2>4. Are you okay feeding live insects or rodents?</h2>
+            <label><input type="radio" name="diet_ok" value="Yes"> Yes</label>
+            <label><input type="radio" name="diet_ok" value="No"> No</label>
+        </div>
+        <div class="quiz-step">
+            <h2>5. Are you a beginner with reptiles?</h2>
+            <label><input type="radio" name="experience" value="Yes"> Yes</label>
+            <label><input type="radio" name="experience" value="No"> No</label>
+        </div>
+        <div class="quiz-step">
+            <h2>6. Do you want a long-lived reptile?</h2>
+            <label><input type="radio" name="lifespan" value="Yes"> Yes</label>
+            <label><input type="radio" name="lifespan" value="Doesn't matter"> Doesn't matter</label>
+        </div>
+        <div class="quiz-step">
+            <h2>7. Do you like bright or natural colors?</h2>
+            <label><input type="radio" name="color" value="Bright"> Bright</label>
+            <label><input type="radio" name="color" value="Natural"> Natural</label>
+        </div>
+        <div class="quiz-step">
+            <h2>8. How much space do you have?</h2>
+            <label><input type="radio" name="space" value="Small"> Small</label>
+            <label><input type="radio" name="space" value="Medium"> Medium</label>
+            <label><input type="radio" name="space" value="Large"> Large</label>
+        </div>
+        <div class="quiz-step">
+            <h2>9. Are you okay using heat or UV lamps?</h2>
+            <label><input type="radio" name="lamp" value="Yes"> Yes</label>
+            <label><input type="radio" name="lamp" value="No"> No</label>
+        </div>
+        <div class="quiz-step">
+            <h2>10. Are you okay with daily misting/humidity?</h2>
+            <label><input type="radio" name="humidity" value="Yes"> Yes</label>
+            <label><input type="radio" name="humidity" value="No"> No</label>
+        </div>
+        <div class="quiz-step">
+            <h2>11. Do you prefer climbers or ground crawlers?</h2>
+            <label><input type="radio" name="movement" value="Climber"> Climber</label>
+            <label><input type="radio" name="movement" value="Crawler"> Crawler</label>
+        </div>
+        <div class="quiz-step">
+            <h2>12. Is this reptile for a home with kids?</h2>
+            <label><input type="radio" name="kids" value="Yes"> Yes</label>
+            <label><input type="radio" name="kids" value="No"> No</label>
+        </div>
+        <div class="quiz-step">
+            <h2>13. Are you okay with frequent shedding?</h2>
+            <label><input type="radio" name="shed" value="Yes"> Yes</label>
+            <label><input type="radio" name="shed" value="No"> No</label>
+        </div>
+        <div class="quiz-step">
+            <h2>14. Are you interested in aquatic reptiles?</h2>
+            <label><input type="radio" name="water" value="Yes"> Yes</label>
+            <label><input type="radio" name="water" value="No"> No</label>
+        </div>
+        <div class="quiz-step">
+            <h2>15. Do you want a reptile you can observe or interact with?</h2>
+            <label><input type="radio" name="interaction" value="Observe"> Observe</label>
+            <label><input type="radio" name="interaction" value="Interact"> Interact</label>
+        </div>
+        <div class="quiz-step">
+            <h2>16. What is your setup budget?</h2>
+            <label><input type="radio" name="budget" value="Low"> Low</label>
+            <label><input type="radio" name="budget" value="Moderate"> Moderate</label>
+            <label><input type="radio" name="budget" value="High"> High</label>
+        </div>
+        <div class="quiz-step">
+            <h2>17. How often are you willing to feed your pet?</h2>
+            <label><input type="radio" name="feed" value="Daily"> Daily</label>
+            <label><input type="radio" name="feed" value="Weekly"> Weekly</label>
+        </div>
+        <div class="quiz-step">
+            <h2>18. How often can you clean the enclosure?</h2>
+            <label><input type="radio" name="cleaning" value="Daily"> Daily</label>
+            <label><input type="radio" name="cleaning" value="Weekly"> Weekly</label>
+        </div>
+        <div class="quiz-step">
+            <h2>19. Do you want a common or rare reptile?</h2>
+            <label><input type="radio" name="uniqueness" value="Common"> Common</label>
+            <label><input type="radio" name="uniqueness" value="Rare"> Rare</label>
+        </div>
+        <div class="quiz-step">
+            <h2>20. Do you prefer a silent pet?</h2>
+            <label><input type="radio" name="noise" value="Yes"> Yes</label>
+            <label><input type="radio" name="noise" value="Doesn't matter"> Doesn't matter</label>
+        </div>
+        <!-- Submit Button -->
+        <div class="quiz-controls">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <div id="quizResult" style="display:none">
+        <h2>Your Ideal Reptile Match:</h2>
+        <div id="resultContent"></div>
+    </div>
+</section>
+
+</body>
+</html>
+<button class="heart-btn" onclick="favoritePet(this)">❤</button>
+<nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="catalog.html">Reptile Catalog</a>
+    <a href="quiz.html">Find Your Match</a>
+</nav>
+<a href="reptile-detail.html?name=Leo">
+
+ }
