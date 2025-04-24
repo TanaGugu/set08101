@@ -95,6 +95,43 @@
     text-align: center;
     width: 100%;
 }
+.quizHomePg {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: left; 
+    text-align: left;
+    width: 100%;
+}
+
+.quizHomePg button {
+    background-color: #cd4813;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.HomePG{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: right; 
+    text-align: right;
+    width: 100%;
+}
+.HomePg button {
+    background-color: #cd4813;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
 
 #quiz-container {
     display: flex;
