@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoption Process - Beastly Bonds</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --primary-light: #81C784;
+            --primary-dark: #388E3C;
+            --secondary: #607D8B;
+            --accent: #FF9800;
+            --light: #F5F5F5;
+            --dark: #212121;
+            --white: #FFFFFF;
+            --gray: #E0E0E0;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .site-header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-nav li {
+            margin-left: 30px;
+        }
+
+        .main-nav a {
+            font-weight: 500;
+            color: var(--dark);
+            text-decoration: none;
+            padding: 8px 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: var(--primary);
+        }
+
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url('https://images.unsplash.com/photo-1530281700549-e82e7bf110d6') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero-banner .container {
+            max-width: 800px;
+        }
+
+        .hero-banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-banner p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .step {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 80px;
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 40px;
+            top: 60px;
+            bottom: -40px;
+            width: 2px;
+            background-color: var(--primary-light);
+        }
+
+        .step-number {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            position: absolute;
+            left: 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-content {
+            padding: 15px 30px;
+            background-color: var(--light);
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            flex-grow: 1;
+            transition: var(--transition);
+        }
+
+        .step-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .step-content h2 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+
+            .main-nav ul {
+                margin-top: 20px;
+            }
+
+            .main-nav li {
+                margin-left: 15px;
+            }
+
+            .hero-banner h1 {
+                font-size: 2.2rem;
+            }
+
+            .step {
+                padding-left: 60px;
+            }
+
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .step-content {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .main-nav li {
+                margin: 5px 10px;
+            }
+
+            .step {
+                padding-left: 50px;
+            }
+
+            .step-number {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="container">
+        <a href="index.html" class="logo">Beastly Bonds</a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="adoption-process.html" class="active">Adoption Process</a></li>
+                <li><a href="adoption-agreement.html">Adoption Agreement</a></li>
+                <li><a href="dog.html">Available Pets</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="adoption-process">
+    <section class="hero-banner">
+        <div class="container">
+            <h1>Our Adoption Process</h1>
+            <p>Follow these steps to welcome your new family member</p>
+        </div>
+    </section>
+
+    <section class="process-steps">
+        <div class="container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h2>Find Your Match</h2>
+                    <p>Browse our available pets or take our matching quiz to find your perfect companion.</p>
+                    <a href="dog.html" class="btn btn-outline">View Available Pets</a>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h2>Submit Application</h2>
+                    <p>Complete our adoption application form to begin the process.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h2>Meet & Greet</h2>
+                    <p>Schedule a visit to meet your potential new pet in person.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h2>Home Check</h2>
+                    <p>We'll conduct a brief home visit to ensure a safe environment.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h2>Finalize Adoption</h2>
+                    <p>Complete the paperwork, pay the adoption fee, and bring your pet home!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Adopt?</h2>
+            <p>Begin your adoption journey by choosing your dog</p>
+            <a href="dog.html" class="btn btn-primary">Choose Your Dog</a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2023 Beastly Bonds. All rights reserved.</p>
+        <p>Find your perfect pet companion today!</p>
+    </div>
+</footer>
+</body>
+</html>
