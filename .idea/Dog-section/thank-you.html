@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Beastly Bonds</title>
+  <link rel="stylesheet" href="../Dog-section/css/styles.css">
+  <style>
+    .checkmark-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+    }
+    .checkmark-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">Beastly Bonds</a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="adoption-process.html">Adoption Process</a></li>
+        <li><a href="adoption-agreement.html">Adoption Agreement</a></li>
+        <li><a href="dog.html">Available Pets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="thank-you-page">
+  <section class="hero-banner">
+    <div class="container">
+      <h1>Thank You!</h1>
+      <p>Your adoption application has been submitted</p>
+    </div>
+  </section>
+
+  <section class="thank-you-content">
+    <div class="container">
+      <div class="thank-you-card">
+        <div class="checkmark-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle cx="26" cy="26" r="25" fill="none" stroke="#4CAF50" stroke-width="2"/>
+            <path fill="none" stroke="#4CAF50" stroke-width="4" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+          </svg>
+        </div>
+        <h2>Application Received</h2>
+        <p>We've received your adoption application for <span id="pet-name-display"></span>. Our team will review your information and contact you within 2-3 business days to discuss next steps.</p>
+
+        <div class="next-steps">
+          <h3>What Happens Next?</h3>
+          <ol>
+            <li>Application review by our adoption team</li>
+            <li>Reference checks (if applicable)</li>
+            <li>Home visit (if required)</li>
+            <li>Final approval and scheduling pickup</li>
+          </ol>
+        </div>
+
+        <div class="contact-info">
+          <p>If you have any questions, please contact us at:</p>
+          <p><strong>Email:</strong> adoptions@beastlybonds.org</p>
+          <p><strong>Phone:</strong> (555) 123-4567</p>
+        </div>
+
+        <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2023 Beastly Bonds. All rights reserved.</p>
+    <p>Find your perfect pet companion today!</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve the stored form data
+    const formData = JSON.parse(localStorage.getItem('adoptionFormData'));
+
+    if (formData && formData.petName) {
+      // Display the pet name in the thank you message
+      document.getElementById('pet-name-display').textContent = formData.petName;
+
+      // Clear the stored form data (optional)
+      localStorage.removeItem('adoptionFormData');
+    }
+  });
+</script>
+</body>
+</html>
