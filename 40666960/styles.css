@@ -1,0 +1,68 @@
+:root {
+    --primary-color: #79826A;
+    --secondary-color: #7D7757;
+    --background2-color: #E5D2B0;
+    --background-color: black;
+    --text-color: #252728;
+}
+.header {
+    font-size: 5rem;
+    height: 50%;
+    width: 100%;
+    text-align: center;
+    margin:auto;
+    color: var(--primary-color)
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    background: 
+        linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1)), 
+        url('imgs/dense-jungle-canopy-with-vibrant-varied-flora-hiding-mysterious-creatures-within-its-shadows.jpg') center/cover no-repeat;
+}
+
+.gallery {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color:black;
+}
+
+.profile-card {
+   width: 15rem;
+   height: 20rem;
+   margin: 1rem;
+   padding: 1rem;
+   align-items: center;
+   justify-content: center;
+   border-style: solid;
+   border-color: #252728;
+   border-radius: 1.5rem;
+   box-shadow: 0.5rem 0.5rem 1rem var(--text-color);
+   background-color: var(--text-color);
+}
+
+.card-header {
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    margin:auto;
+    color: var(--primary-color)
+}
+
+.card-image {
+    width: 100%; 
+    height: 90%;
+    object-fit: cover;
+    border-radius: 1rem;
+    overflow: hidden;
+}
