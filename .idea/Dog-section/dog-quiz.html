@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Matching Quiz - Beastly Bonds</title>
+  <link rel="stylesheet" href="../Dog-section/css/styles.css">
+</head>
+<body>
+<nav class="quiz-nav">
+  <div class="container">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dog.html">Dog Home</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <section id="quiz" class="quiz-section">
+    <h2 class="section-title">Find Your Perfect Dog</h2>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <form id="pet-quiz" class="quiz-form">
+      <!-- Question 1 -->
+      <div class="quiz-question">
+        <div class="question-header">
+          <div class="question-number">1</div>
+          <label class="question-label">What is your living situation?</label>
+        </div>
+        <div class="options-container">
+          <label class="option-card">
+            <input type="radio" name="living-situation" value="apartment" required>
+            <div class="option-content">
+              <span class="option-text">Apartment</span>
+            </div>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="living-situation" value="house">
+            <div class="option-content">
+              <span class="option-text">House with Yard</span>
+            </div>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="living-situation" value="farm">
+            <div class="option-content">
+              <span class="option-text">Rural/Farm</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="quiz-question">
+        <div class="question-header">
+          <div class="question-number">2</div>
+          <label class="question-label">How active is your lifestyle?</label>
+        </div>
+        <div class="options-container">
+          <label class="option-card">
+            <input type="radio" name="activity-level" value="low" required>
+            <div class="option-content">
+              <span class="option-text">Relaxed (I prefer quiet time)</span>
+            </div>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="activity-level" value="medium">
+            <div class="option-content">
+              <span class="option-text">Moderate (Daily walks)</span>
+            </div>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="activity-level" value="high">
+            <div class="option-content">
+              <span class="option-text">Active (Regular exercise)</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="quiz-question">
+        <div class="question-header">
+          <div class="question-number">3</div>
+          <label class="question-label">How much time can you spend daily on dog care?</label>
+        </div>
+        <div class="options-container">
+          <label class="option-card">
+            <input type="radio" name="care-time" value="1-2" required>
+            <div class="option-content">
+              <span class="option-text">1-2 hours</span>
+            </div>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="care-time" value="2-3">
+            <div class="option-content">
+              <span class="option-text">2-3 hours</span>
+            </div>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="care-time" value="3+">
+            <div class="option-content">
+              <span class="option-text">3+ hours</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="quiz-question">
+        <div class="question-header">
+          <div class="question-number">4</div>
+          <label class="question-label">Do you have children or other pets?</label>
+        </div>
+        <div class="options-container">
+          <label class="option-card">
+            <input type="radio" name="family-situation" value="children" required>
+            <div class="option-content">
+              <span class="option-text">Yes, with children</span>
+            </div>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="family-situation" value="pets">
+            <div class="option-content">
+              <span class="option-text">Yes, with other pets</span>
+            </div>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="family-situation" value="none">
+            <div class="option-content">
+              <span class="option-text">No, just me</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="quiz-question">
+        <div class="question-header">
+          <div class="question-number">5</div>
+          <label class="question-label">What size dog are you looking for?</label>
+        </div>
+        <div class="options-container">
+          <label class="option-card">
+            <input type="radio" name="dog-size" value="small" required>
+            <div class="option-content">
+              <span class="option-text">Small (under 20 lbs)</span>
+            </div>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="dog-size" value="medium">
+            <div class="option-content">
+              <span class="option-text">Medium (20-50 lbs)</span>
+            </div>
+          </label>
+          <label class="option-card">
+            <input type="radio" name="dog-size" value="large">
+            <div class="option-content">
+              <span class="option-text">Large (50+ lbs)</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="quiz-submit-btn">Find My Perfect Match</button>
+    </form>
+  </section>
+
+  <div id="quiz-result" class="quiz-result">
+    <h3>Your Perfect Match:</h3>
+    <div id="match-output" class="match-output"></div>
+    <a href="dog.html" class="quiz-submit-btn" style="margin-top: 20px;">View All Available Dogs</a>
+  </div>
+</div>
+
+<script>
+  const quizForm = document.getElementById("pet-quiz");
+  const resultSection = document.getElementById("quiz-result");
+  const matchOutput = document.getElementById("match-output");
+  const progressBar = document.getElementById("progress-bar");
+
+  // Update progress bar as user answers questions
+  quizForm.addEventListener("change", function() {
+    const answered = document.querySelectorAll('input[type="radio"]:checked').length;
+    const total = document.querySelectorAll('input[type="radio"]').length / 3; // 3 options per question
+    const progress = (answered / total) * 100;
+    progressBar.style.width = `${progress}%`;
+  });
+
+  const dogMatches = [
+    {
+      name: "Buddy",
+      breed: "Labrador",
+      image: "Pictures/labrador-retriever.png",
+      description: "Friendly, energetic, loves kids. Perfect for active families with space.",
+      conditions: {
+        "living-situation": "house",
+        "activity-level": "high",
+        "care-time": "2-3",
+        "family-situation": "children",
+        "dog-size": "large"
+      }
+    },
+    {
+      name: "Max",
+      breed: "Poodle",
+      image: "Pictures/poodle.jpeg.webp",
+      description: "Calm, affectionate, hypoallergenic. Great for apartments and seniors.",
+      conditions: {
+        "living-situation": "apartment",
+        "activity-level": "low",
+        "care-time": "1-2",
+        "family-situation": "none",
+        "dog-size": "medium"
+      }
+    },
+    {
+      name: "Luna",
+      breed: "Husky",
+      image: "Pictures/husky.jpeg",
+      description: "Adventurous, playful, vocal. Needs space and lots of exercise.",
+      conditions: {
+        "living-situation": "farm",
+        "activity-level": "high",
+        "care-time": "3+",
+        "family-situation": "none",
+        "dog-size": "large"
+      }
+    },
+    {
+      name: "Bella",
+      breed: "Beagle",
+      image: "Pictures/beagle.jpeg",
+      description: "Curious, social, food-driven. Good with other pets and families.",
+      conditions: {
+        "living-situation": "house",
+        "activity-level": "medium",
+        "care-time": "2-3",
+        "family-situation": "pets",
+        "dog-size": "small"
+      }
+    },
+    {
+      name: "Charlie",
+      breed: "Golden Retriever",
+      image: "Pictures/golden-retriever.jpg.webp",
+      description: "Loyal, loving, playful. Wonderful family dog with gentle nature.",
+      conditions: {
+        "living-situation": "house",
+        "activity-level": "medium",
+        "care-time": "3+",
+        "family-situation": "children",
+        "dog-size": "large"
+      }
+    }
+  ];
+
+  quizForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(quizForm);
+    const answers = Object.fromEntries(formData.entries());
+
+    let bestMatch = null;
+    let highestScore = 0;
+
+    dogMatches.forEach(dog => {
+      let score = 0;
+      for (let key in dog.conditions) {
+        if (answers[key] === dog.conditions[key]) {
+          score++;
+        }
+      }
+      if (score > highestScore) {
+        highestScore = score;
+        bestMatch = dog;
+      }
+    });
+
+    if (bestMatch) {
+      matchOutput.innerHTML = `
+          <div class="match-card">
+            <img src="${bestMatch.image}" alt="${bestMatch.name}">
+            <h4>${bestMatch.name} the ${bestMatch.breed}</h4>
+            <p>${bestMatch.description}</p>
+            <button onclick="window.location.href='adoption-agreement.html?dog=${encodeURIComponent(bestMatch.name)}'" class="quiz-submit-btn" style="display: inline-block; width: auto; margin-top: 15px;">
+              Meet ${bestMatch.name}
+            </button>
+          </div>
+        `;
+      resultSection.style.display = "block";
+      resultSection.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+</script>
+</body>
+</html>
