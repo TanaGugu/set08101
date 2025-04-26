@@ -1189,3 +1189,46 @@ a {
         margin: 5px 10px;
     }
 }
+.dog-profile {
+    padding: 2rem 0;
+}
+.profile-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.profile-image {
+    flex: 1;
+    min-width: 300px;
+}
+.profile-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.profile-info {
+    flex: 2;
+    min-width: 300px;
+}
+.profile-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+.detail-card {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+}
+.adoption-process {
+    background: #f0f8ff;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+.back-button {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
