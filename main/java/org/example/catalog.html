@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beastly Bonds - Catalog</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .reptile-tags {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .reptile-tags .tag {
+      background: linear-gradient(90deg, #b5f1cc, #cda7ff);
+      color: #3a035b;
+      font-size: 0.75em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .reptile-tags .tag:hover {
+      background: linear-gradient(90deg, #d8c1ff, #c1ffe4);
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .product-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .heart-btn {
+      background: #f6f1ff;
+      border: none;
+      padding: 6px 10px;
+      font-size: 1.2em;
+      color: #6a1b9a;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .heart-btn:hover {
+      background: #e3d3ff;
+      transform: scale(1.2);
+    }
+
+    .featured-products {
+      background: linear-gradient(to bottom right, #fdfbff, #e8fffb);
+      padding: 40px 20px;
+      border-radius: 12px;
+      margin: 30px 20px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Header with Background -->
+<section class="hero-header">
+  <img src="images/reptile-banner.jpg" alt="Reptile Banner" class="hero-bg" />
+  <div class="hero-overlay">
+    <div class="main-header">
+      <div class="logo">Beastly Bonds</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Reptile Catalog</a>
+        <a href="quiz.html">Find Your Match</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- Reptile Grid -->
+</a>
+<div class="browse-catalog-cta">
+  <h2>Want to see all available reptiles?</h2>
+  <a href="catalog.html" class="cta-button">Browse Catalog</a>
+</div>
+<section class="featured-products">
+  <h3 style="font-size: 2.2em; color: #4e1471; text-align: center; margin-top: 40px; margin-bottom: 20px; text-shadow: 1px 1px #ccc;">
+    🌍 16 Most Popular Reptiles in the World 🦎
+  </h3>
+
+  <div class="search-bar" style="text-align: center; margin: 20px 0;">
+    <input type="text" id="searchInput" placeholder="Search by name..." oninput="searchReptiles()"
+           style="padding: 8px 12px; border-radius: 6px; width: 250px; border: 1px solid #ccc;" />
+  </div>
+
+  <div class="filter-bar" style="text-align:center; margin-bottom: 20px;">
+    <label for="tagFilter" style="font-weight: bold; margin-right: 8px;">Filter by Tag:</label>
+    <select id="tagFilter" onchange="filterReptiles()" style="padding: 6px 12px; border-radius: 6px;">
+      <option value="all">All</option>
+      <option value="Beginner-Friendly">Beginner-Friendly</option>
+      <option value="Low Maintenance">Low Maintenance</option>
+      <option value="Not Beginner-Friendly">Not Beginner-Friendly</option>
+      <option value="High Maintenance">High Maintenance</option>
+    </select>
+  </div>
+
+  <div class="filter-bar" style="text-align:center; margin-bottom: 20px;">
+    <label for="speciesFilter" style="font-weight: bold; margin-right: 8px;">Filter by Species:</label>
+    <select id="speciesFilter" onchange="filterReptiles()" style="padding: 6px 12px; border-radius: 6px;">
+      <option value="all">All</option>
+      <option value="Gecko">Gecko</option>
+      <option value="Snake">Snake</option>
+      <option value="Lizard">Lizard</option>
+      <option value="Tortoise">Tortoise</option>
+      <option value="Skink">Skink</option>
+      <option value="Boa">Boa</option>
+    </select>
+  </div>
+
+  <div class="filter-bar" style="text-align:center; margin-bottom: 30px;">
+    <label for="sortBy" style="font-weight: bold; margin-right: 8px;">Sort by:</label>
+    <select id="sortBy" onchange="sortReptiles()" style="padding: 6px 12px; border-radius: 6px;">
+      <option value="az">A-Z</option>
+      <option value="za">Z-A</option>
+    </select>
+  </div>
+
+  <div class="grid-container">
+
+    <div class="product-card" data-species="Gecko">
+      <a href="reptile-detail.html?name=Leo">
+        <img src="images/leopard-gecko.jpg" alt="Leo the Leopard Gecko">
+        <h4>Leo</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Beginner-Friendly</span>
+        <span class="tag">Low Maintenance</span>
+      </div>
+      <p class="reptile-story">Naga is a calm corn snake who prefers quiet spaces and smooth handling.</p>
+    </div>
+
+    <div class="product-card" data-species="Snake">
+      <a href="reptile-detail.html?name=Blaze">
+        <img src="images/blaze-corn-snake.jpg" alt="Blaze the Corn Snake" title="Blaze the Corn Snake">
+        <h4>Blaze</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Beginner-Friendly</span>
+        <span class="tag">Low Maintenance</span>
+      </div>
+      <p class="reptile-story">Slyther is a majestic boa who enjoys slow exploration and cozy hides.</p>
+    </div>
+
+    <div class="product-card" data-species="Lizard">
+      <a href="reptile-detail.html?name=Spike">
+        <img src="images/bearded-dragon.jpg" alt="Spike the Bearded Dragon">
+        <h4>Spike</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Beginner-Friendly</span>
+        <span class="tag">High Maintenance</span>
+      </div>
+      <p class="reptile-story">Chomp is a curious monitor lizard who loves to climb and observe.</p>
+    </div>
+
+    <div class="product-card" data-species="Snake">
+      <a href="reptile-detail.html?name=Monty">
+        <img src="images/ball-python.jpg" alt="Monty the Ball Python">
+        <h4>Monty</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Beginner-Friendly</span>
+        <span class="tag">Low Maintenance</span>
+      </div>
+      <p class="reptile-story">Scales is a bold tegu who thrives with consistent care and snacks.</p>
+    </div>
+
+    <div class="product-card" data-species="Gecko">
+      <a href="reptile-detail.html?name=Pogo">
+        <img src="images/crested-gecko.jpg" alt="Pogo the Crested Gecko">
+        <h4>Pogo</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Beginner-Friendly</span>
+        <span class="tag">High Maintenance</span>
+      </div>
+      <p class="reptile-story">Mossy is a mellow gecko who loves vertical climbing and calm vibes.</p>
+    </div>
+
+    <div class="product-card" data-species="Lizard">
+      <a href="reptile-detail.html?name=Tango">
+        <img src="images/blue-tongued-skink.jpg" alt="Tango the Blue-Tongued Skink">
+        <h4>Tango</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Not Beginner-Friendly</span>
+        <span class="tag">Low Maintenance</span>
+      </div>
+      <p class="reptile-story">Shadow is a calm black rat snake who’s great for confident handlers.</p>
+    </div>
+
+    <div class="product-card" data-species="Tortoise">
+      <a href="reptile-detail.html?name=Shelly">
+        <img src="images/russian-tortoise.jpg" alt="Shelly the Russian Tortoise">
+        <h4>Shelly</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Beginner-Friendly</span>
+        <span class="tag">Low Maintenance</span>
+      </div>
+      <p class="reptile-story">Shelly is a wise tortoise who has a fondness for dandelions and long naps.</p>
+    </div>
+
+    <div class="product-card" data-species="Snake">
+      <a href="reptile-detail.html?name=Stripe">
+        <img src="images/king-snake.jpg" alt="Stripe the King Snake">
+        <h4>Stripe</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Not Beginner-Friendly</span>
+        <span class="tag">Low Maintenance</span>
+      </div>
+      <p class="reptile-story">Stripe is a stealthy king snake with a striking pattern and a calm nature.</p>
+    </div>
+
+    <div class="product-card" data-species="Gecko">
+      <a href="reptile-detail.html?name=Grizzle">
+        <img src="images/gargoyle-gecko.jpg" alt="Grizzle the Gargoyle Gecko">
+        <h4>Grizzle</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Not Beginner-Friendly</span>
+        <span class="tag">High Maintenance</span>
+      </div>
+      <p class="reptile-story">Grizzle is a shy gargoyle gecko who becomes playful once familiar.</p>
+    </div>
+
+    <div class="product-card" data-species="Tortoise">
+      <a href="reptile-detail.html?name=Splash">
+        <img src="images/red-eared-slider.jpg" alt="Splash the Red-Eared Slider">
+        <h4>Splash</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Not Beginner-Friendly</span>
+        <span class="tag">Low Maintenance</span>
+      </div>
+      <p class="reptile-story">Splash is a water-loving slider who enjoys splashing and swimming all day.</p>
+    </div>
+
+    <div class="product-card" data-species="Snake">
+      <a href="reptile-detail.html?name=Naga">
+        <img src="images/Naga the Corn Snake.jpg" alt="Naga the Corn Snake" title="Naga the Corn Snake">
+        <h4>Naga</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Not Beginner-Friendly</span>
+        <span class="tag">High Maintenance</span>
+      </div>
+    </div>
+
+    <div class="product-card" data-species="Boa">
+      <a href="reptile-detail.html?name=Slyther">
+        <img src="images/boa-constrictor.jpg" alt="Slyther the Boa Constrictor" title="Slyther the Boa Constrictor">
+        <h4>Slyther</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Not Beginner-Friendly</span>
+        <span class="tag">High Maintenance</span>
+      </div>
+    </div>
+
+    <div class="product-card" data-species="Lizard">
+      <a href="reptile-detail.html?name=Chomp">
+        <img src="images/chomp-the-monitor-lizard.jpg" alt="Chomp the Monitor Lizard" title="Chomp the Monitor Lizard">
+        <h4>Chomp</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Not Beginner-Friendly</span>
+        <span class="tag">High Maintenance</span>
+      </div>
+    </div>
+
+    <div class="product-card" data-species="Lizard">
+      <a href="reptile-detail.html?name=Scales">
+        <img src="images/scales-the-tegu.jpg" alt="Scales the Tegu" title="Scales the Tegu">
+        <h4>Scales</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Not Beginner-Friendly</span>
+        <span class="tag">High Maintenance</span>
+      </div>
+    </div>
+
+    <div class="product-card" data-species="Gecko">
+      <a href="reptile-detail.html?name=Mossy">
+        <img src="images/mossy-gecko.jpg" alt="Mossy the Gecko" title="Mossy the Gecko">
+        <h4>Mossy</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Not Beginner-Friendly</span>
+        <span class="tag">High Maintenance</span>
+      </div>
+    </div>
+
+    <div class="product-card" data-species="Snake">
+      <a href="reptile-detail.html?name=Shadow">
+        <img src="images/shadow-the-black-rat-snake.jpg" alt="Shadow the Black Rat Snake" title="Shadow the Black Rat Snake">
+        <h4>Shadow</h4>
+      </a>
+      <button class="heart-btn">❤</button>
+      <div class="reptile-tags">
+        <span class="tag">Not Beginner-Friendly</span>
+        <span class="tag">High Maintenance</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-columns">
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="quiz.html">Quiz</a>
+    </div>
+  </div>
+  <p class="copyright">&copy; 2025 Beastly Bonds. All rights reserved.</p>
+</footer>
+
+<script src="scripts.js"></script>
+<script>
+  function searchReptiles() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.product-card');
+
+    cards.forEach(card => {
+      const name = card.querySelector('h4').textContent.toLowerCase();
+      const matchesTag = card.style.display !== 'none'; // only filter visible from tag filter
+      card.style.display = name.includes(input) && matchesTag ? '' : 'none';
+    });
+  }
+
+  function filterReptiles() {
+    const selectedTag = document.getElementById('tagFilter').value;
+    const selectedSpecies = document.getElementById('speciesFilter').value;
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.product-card');
+
+    cards.forEach(card => {
+      const name = card.querySelector('h4').textContent.toLowerCase();
+      const tags = Array.from(card.querySelectorAll('.reptile-tags .tag')).map(t => t.textContent);
+      const matchesTag = selectedTag === 'all' || tags.includes(selectedTag);
+      const matchesSpecies = selectedSpecies === 'all' || card.dataset.species === selectedSpecies;
+      const matchesSearch = name.includes(searchInput);
+
+      card.style.display = matchesTag && matchesSpecies && matchesSearch ? '' : 'none';
+    });
+  }
+
+  function sortReptiles() {
+    const order = document.getElementById('sortBy').value;
+    const grid = document.querySelector('.grid-container');
+    const cards = Array.from(grid.querySelectorAll('.product-card'));
+
+    cards.sort((a, b) => {
+      const nameA = a.querySelector('h4').textContent.toLowerCase();
+      const nameB = b.querySelector('h4').textContent.toLowerCase();
+      return order === 'az' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+    });
+
+    cards.forEach(card => grid.appendChild(card));
+  }
+
+  document.getElementById('searchInput').addEventListener('input', filterReptiles);
+</script>
+</body>
+</html>
+<nav class="main-nav">
+  <a href="index.html">Home</a>
+  <a href="catalog.html">Reptile Catalog</a>
+  <a href="quiz.html">Find Your Match</a>
+</nav>

@@ -1,0 +1,84 @@
+<!-- Setting up the basic HTML structure -->
+<!DOCTYPE html>
+<!-- Root element, setting language to English -->
+<html lang="en">
+<!-- Head: linking styles and setting up page info -->
+<head>
+  <!-- Making sure special characters display correctly -->
+  <meta charset="UTF-8" />
+  <!-- Responsive setup for mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Page title shown on the browser tab -->
+  <title>Reptile Detail</title>
+  <!-- Linking external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<!-- Main content starts here -->
+<body>
+
+<!-- Top section with background banner and navigation -->
+<section class="hero-header">
+  <img src="images/reptile-banner.jpg" alt="Reptile Banner" class="hero-bg" />
+  <div class="hero-overlay">
+    <div class="main-header">
+      <div class="logo">Beastly Bonds</div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="catalog.html">Reptile Catalog</a>
+        <a href="quiz.html">Find Your Match</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- Section to display selected reptile info -->
+<section class="reptile-detail">
+  <img id="reptileImg" src="" alt="">
+  <h2 id="reptileName"></h2>
+  <p id="reptileDescription"></p>
+  <audio id="reptileAudio" controls></audio>
+</section>
+
+<!-- Footer with quick navigation links -->
+<footer class="site-footer">
+  <div class="footer-columns">
+    <div class="footer-column">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="quiz.html">Quiz</a>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Script to fetch and show reptile details dynamically -->
+<script>
+  // Grab the query parameters from the URL
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name");
+
+  // Fetch the list of reptiles
+  fetch('data/reptiles.json')
+          .then(res => res.json())
+          .then(data => {
+            // Find the matching reptile based on the name
+            const reptile = data.find(r => r.name === name);
+            // If the reptile is found, update the page content
+            if (reptile) {
+              document.getElementById("reptileImg").src = reptile.image;
+              document.getElementById("reptileName").textContent = reptile.name;
+              document.getElementById("reptileDescription").textContent = reptile.description;
+              if (reptile.audio) {
+                document.getElementById("reptileAudio").src = reptile.audio;
+              }
+            }
+          })
+          // Handle errors, like if the JSON fails to load
+          .catch(err => {
+            document.querySelector(".reptile-detail").innerHTML = `<h2>Could not load reptile data. Check your JSON.</h2>`;
+          });
+</script>
+</body>
+</html>

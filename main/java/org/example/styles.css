@@ -1,0 +1,357 @@
+/* Header Hero */
+.hero-header {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+.hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    color: white;
+}
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+.main-nav a {
+    margin-left: 20px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+}
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    border: 2px solid #e0d1f5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.heart-btn {
+    transition: transform 0.2s ease;
+}
+
+.heart-btn:hover {
+    transform: scale(1.2);
+}
+
+.cta-button {
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #8336be;
+    transform: scale(1.05);
+}
+
+.site-footer {
+    font-size: 14px;
+    background: linear-gradient(to right, #6a1b9a, #8336be);
+}
+
+.browse-catalog-cta h2,
+.cta-banner h2,
+.adoption-cta h2 {
+    font-weight: 600;
+    color: #4e1471;
+}
+
+.featured-products h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product-card {
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.product-card h4 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.heart-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #e91e63;
+    cursor: pointer;
+}
+/* Footer */
+.site-footer {
+    background: #6a1b9a;
+    color: white;
+    padding: 40px 20px;
+}
+.site-footer a {
+    color: white;
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.product-card h4 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.heart-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #e91e63;
+    cursor: pointer;
+}
+.reptile-detail {
+    padding: 40px;
+    text-align: center;
+}
+
+.reptile-detail img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.reptile-detail h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.reptile-detail p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cta-banner {
+    background: #def7e5;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+.cta-button {
+    background: #6a1b9a;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.cta-button:hover {
+    background: #4e1471;
+}
+.hero-header {
+    position: relative;
+    height: 350px; /* adjust height as needed */
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.3); /* optional dark overlay */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+.hero-header.slideshow {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.hero-header .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fade 20s infinite;
+}
+
+.hero-header .slide:nth-child(1) {
+    animation-delay: 0s;
+}
+.hero-header .slide:nth-child(2) {
+    animation-delay: 5s;
+}
+.hero-header .slide:nth-child(3) {
+    animation-delay: 10s;
+}
+.hero-header .slide:nth-child(4) {
+    animation-delay: 15s;
+}
+
+@keyframes fade {
+    0%   { opacity: 0; }
+    5%   { opacity: 1; }
+    25%  { opacity: 1; }
+    30%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+.reptile-story {
+    font-size: 14px;
+    color: #555;
+    margin-top: 6px;
+}
