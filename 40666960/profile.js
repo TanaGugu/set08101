@@ -41,12 +41,6 @@ function renderProfile(a) {
                 <div class="profile-description">
                     <p>${a.description}</p>
                 </div>
-                <p class="contact-info">
-                    Contact Info:<br>
-                    <a href="mailto:${a.contact_info}" class="text-primary-900">
-                        ${a.contact_info}
-                    </a>
-                </p>
                 <button class="button">Adopt ${a.name}</button>
             </div>
         `
@@ -55,3 +49,12 @@ function renderProfile(a) {
 function showError(msg) {
     document.getElementById("profile").innerHTML = `<p>${msg}</p>`;
 }
+
+document.getElementById("back-btn").addEventListener("click", (e) => {
+    e.preventDefault();
+    if (window.history.length > 1) {
+        history.back();
+    } else {
+        window.location.href = "monkey.html";
+    }
+});
