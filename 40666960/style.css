@@ -240,7 +240,7 @@ header .nav-list a {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  border-radius: 2rem;
+  border-radius: var(--size-500);
   overflow: hidden;
   box-shadow: 0 1em 1em -1em var(--clr-accent-400);
 }
@@ -256,6 +256,39 @@ header .nav-list a {
   font-weight: var(--fw-bold);
   font-size: var(--size-700);
   text-align: center;
+}
+
+/* Profile */
+.profile-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-700);
+    padding: 0 1rem 0 1rem
+}
+
+.profile-column img {
+    border-radius: var(--size-500);
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+
+.contact-info {
+    font-weight: var(--fw-bold);
+}
+
+.info-list {
+    padding: var(--size-400);
+    border-radius: var(--size-300);
+    font-size: var(--fs-nav);
+    gap: clamp(var(--size-600), 5vw ,var(--size-700));
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-weight: var(--fw-bold);
+}
+
+.info-list li {
+    align-items: center;
 }
 
 
