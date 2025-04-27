@@ -1,40 +1,31 @@
- document.addEventListener("DOMContentLoaded", async () => {
+const BASE_URL = "https://beastybonds-dnbkh3hgf2atcnfg.ukwest-01.azurewebsites.net/api/v1"
 
-    const animalCardData = await fetchAnimalsByCategory()
-    const cardContainer = document.getElementById("gallery-grid")
+document.addEventListener("DOMContentLoaded", async () => {
+
+    const animalCardData = await fetchAllByCategory("monkey")
+    const cardContainer = document.getElementById("gallery")
 
     animalCardData.forEach(animal => {
     
         const card = document.createElement("div")
-        card.classList.add("gallery-item")
+        card.clasName = "card bg-accent-400"
 
-        if (animal.status === 'ADOPTED') {
-            
-        }
         card.innerHTML = 
         `
-            <h1>${animal.name}</h1>
             <img src=${animal.img_url} alt="animal image">
-
-
+            <h3>${animal.name}</h3>
         `
         cardContainer.appendChild(card)
     })
 })
 
-async function fetchAnimalsByCategory(){
+async function fetchAllByCategory(category) {
     try{
-        // const category = document.getElementById("category").value.toLowerCase()
-        const category = "mammal"
-        const response = await fetch(`http://localhost:8080/api/v1/animals?category=${category}`)
-    
+        const response = await fetch(`${BASE_URL}/animals?category=${category}`)
         if (!response.ok){
-            throw new Error("Somethdifsds")
+            throw new Error("Pizdec Tovarishi!")
         }
-
-        const animals = await response.json()
-        return animals
-
+        return await response.json()
     }catch(error){
         console.error(error)
     }
