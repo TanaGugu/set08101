@@ -67,6 +67,9 @@ html:focus-within {
 html,
 body {
     height: 100%;
+    /* disable scroll chaining & pull-to-refresh */
+    overscroll-behavior: none;
+    overscroll-behavior-y: none;
 }
 
 /* Set core body defaults */
