@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     animalCardData.forEach(animal => {
     
         const card = document.createElement("div")
-        card.clasName = "card bg-accent-400"
+        card.className = "card bg-accent-400"
 
         card.innerHTML = 
         `
