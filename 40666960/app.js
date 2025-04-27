@@ -1,26 +1,32 @@
+const BASE_URL = "https://beastybonds-dnbkh3hgf2atcnfg.ukwest-01.azurewebsites.net/api/v1"
 
-document.addEventListener("DOMContentLoaded", () => {
-    const cardData = [
-        { name: "Suzie", img: "imgs/portrait-long-tailed-macaque.jpg" },
-        { name: "Max", img: "imgs/bonnet-macaque-sitting-railing-holding-green-coconut.jpg" },
-        { name: "Luna", img: "imgs/cute-young-capuchin-monkey-eating-yellow-fruit-looking-side.jpg" },
-        { name: "Bella", img: "imgs/monkey-sitting-wooden-fence (1).jpg" },
-        { name: "Suzie", img: "imgs/portrait-long-tailed-macaque.jpg" },
-        { name: "Max", img: "imgs/bonnet-macaque-sitting-railing-holding-green-coconut.jpg" },
-        { name: "Luna", img: "imgs/cute-young-capuchin-monkey-eating-yellow-fruit-looking-side.jpg" },
-        { name: "Bella", img: "imgs/monkey-sitting-wooden-fence (1).jpg" }
-    ];
+document.addEventListener("DOMContentLoaded", async () => {
 
-    const cardContainer = document.getElementById("cardContainer");
+    const animalCardData = await fetchAllByCategory("monkey")
+    const cardContainer = document.getElementById("gallery")
 
-    cardData.forEach(item => {
-        const card = document.createElement("div");
-        card.classList.add("profile-card");
-        card.innerHTML = `
-            <h2 class="card-header">${item.name}</h2>
-            <img src="${item.img}" alt="${item.name}" class="card-image">
-        `;
+    animalCardData.forEach(animal => {
+    
+        const card = document.createElement("div")
+        card.clasName = "card bg-accent-400"
 
-        cardContainer.appendChild(card);
-    });
-});
+        card.innerHTML = 
+        `
+            <img src=${animal.img_url} alt="animal image">
+            <h3>${animal.name}</h3>
+        `
+        cardContainer.appendChild(card)
+    })
+})
+
+async function fetchAllByCategory(category) {
+    try{
+        const response = await fetch(`${BASE_URL}/animals?category=${category}`)
+        if (!response.ok){
+            throw new Error("Pizdec Tovarishi!")
+        }
+        return await response.json()
+    }catch(error){
+        console.error(error)
+    }
+}

@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Sono:wght@200..800&display=swap');
+
+:root {
+    --clr-accent-100: #FAB12F;
+    --clr-accent-400: #FA812F;
+    --clr-accent-900: #FA4032;
+    --clr-primary-900: #062E1C;
+    --clr-neutral-100: #FEF3E2;
+
+    --ff-primary: 'Raleway', sans-serif;
+    --ff-body: var(--ff-primary);
+    --ff-heading: var(--ff-primary);
+
+    --fw-regular: 300;
+    --fw-semi-bold: 500;
+    --fw-bold: 900;
+
+    --size-300: 0.75rem;
+    --size-400: 1rem;
+    --size-500: 1.25rem;
+    --size-600: 1.5rem;
+    --size-700: 2rem;
+    --size-800: 2.5rem;
+    --size-900: 4.5rem;
+
+    --fs-body: var(--size-400);
+    --fs-primary-heading: var(--size-700);
+    --fs-secondary-heading: var(--size-600);
+    --fs-nav: var(--size-400);
+    --fs-button: var(--size-300);
+}
+
+@media (min-width: 50em) {
+    :root {
+        --fs-body: var(--size-500);
+        --fs-primary-heading: var(--size-900);
+        --fs-secondary-heading: var(--size-800);
+        --fs-nav: var(--size-400);
+        --fs-button: var(--size-400);
+    }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  font-size: var(--fs-body);
+    font-family: var(--ff-body), sans-serif;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* GENERAL STYLES*/
+
+
+/* Button */
+.button {
+  border: 1px solid;
+  border-radius: 100vmax;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-button);
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-accent-900);
+  box-shadow: 0 1em 1em -1em var(--clr-accent-900);
+}
+
+.button:hover,
+.button:focus-visible {
+  background-color: var(--clr-accent-400);
+  box-shadow: 0 1em 1em -1em var(--clr-accent-400);
+}
+
+
+/* Navigation */
+header .nav-list {
+    font-weight: var(--fw-semi-bold);
+}
+header .nav-list a {
+    color: var(--clr-primary-900);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.nav-list {
+    font-size: var(--fs-nav);
+    gap: clamp(var(--size-400), 5vw ,var(--size-500));
+    display: flex;
+    text-align: center;
+    font-weight: var(--fw-bold);
+}
+
+.nav-list a {
+    color: var(--clr-neutral-100);
+    text-decoration: none;
+}
+
+@media (max-width: 50em) {
+  .primary-nav {
+    display: none;
+    position: absolute;
+    padding: var(--size-700);
+    inset: 7rem var(--size-400) auto;
+    background: var(--clr-accent-100);
+    border-radius: var(--size-300);
+    box-shadow: 0 0 0.5em rgb(0, 0, 0, 0.05);
+  }
+
+  .primary-nav::after {
+    content: '';
+    position: absolute;
+  }
+
+  .primary-nav[data-visible] {
+    display: block;
+  }
+
+  header .nav-list a {
+      color: var(--clr-neutral-100);
+      font-weight: var(--fw-bold);
+  }
+
+  .nav-list {
+      display: grid;
+      gap: var(--size-400);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    cursor: pointer;
+    background: transparent;
+  }
+  
+  .mobile-nav-toggle .icon-closed {
+    display: none;
+  }
+
+  .svg {
+      height: var(--size-700);
+  }
+}
+
+.mobile-nav-toggle {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+.mobile-nav-toggle .icon-closed {
+  display: none;
+}
+
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+  gap: var(--size-700);
+}
+
+.card {
+  border: 1px solid;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 1em 1em -1em var(--clr-accent-400);
+}
+
+.card img {
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+
+.card h3 {
+  text-transform: uppercase;
+  margin: var(--size-300);
+  font-weight: var(--fw-bold);
+  font-size: var(--size-700);
+  text-align: center;
+}
+
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--size-700);
+}
+
+.socials-list {
+    display: inline-flex;
+    gap: var(--size-700);
+}
+
+
+/* Utility classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+.text-primary-900{
+    color: var(--clr-primary-900);
+}
+.text-neutral-100{
+    color: var(--clr-neutral-100);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-accent-100 {
+    background-color: var(--clr-accent-100);
+}
+.bg-accent-400 {
+    background-color: var(--clr-accent-400);
+}
+.bg-accent-900 {
+  background-color: var(--clr-accent-900);
+}
+.bg-neutral-100 {
+    background-color: var(--clr-neutral-100);
+}
+.bg-primary-900 {
+    background-color: var(--clr-primary-900);
+}
+
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+.fw-semi-bold {
+    font-weight: var(--fw-semi-bold);
+}
+.fw-regular {
+    font-weight: var(--fw-regular);
+}
+
+.fs-primary-heading {
+    font-size: var(--fs-primary-heading);
+    line-height: 1.1;
+}
+.fs-secondary-heading {
+    font-size: var(--fs-secondary-heading);
+    line-height: 1.1;
+}
+.fs-300 {
+  font-size: var(--size-300);
+}
+.fs-400 {
+  font-size: var(--size-400);
+}
+.fs-500 {
+  font-size: var(--size-500);
+}
+
+.padding-block {
+  padding-block: var(--size-900);
+}
+
+.display-sm-none {
+  display: none;
+}
+
+.container {
+  --max-width: 1110px;
+  --padding: var(--size-700);
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+:where(.flow :not(:first-child)) {
+  margin-top: var(--flow-space, 2em);
+}
+
+.svg {
+    height: var(--size-900);
+}
+
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+
+  .display-md-inline-flex {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 50em) {
+    .padding-block {
+        padding-block: var(--size-700);
+    }
+
+    .gallery-item h1 {
+        font-size: var(--size-600);
+    }
+
+    body {
+        text-align: center;
+    }
+}
