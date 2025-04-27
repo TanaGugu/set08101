@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         card.innerHTML = 
         `
-            <img src=${animal.img_url} alt="animal image">
+            <img src=${animal.img_url} alt="image">
             <h3>${animal.name}</h3>
         `
 

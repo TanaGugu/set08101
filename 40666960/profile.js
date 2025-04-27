@@ -23,20 +23,33 @@ async function fetchById(id) {
 }
 
 function renderProfile(a) {
-    const root = document.getElementById("profile");
-    root.innerHTML = `
-    <h1 class="fs-primary-heading fw-bold">${a.name}</h1>
-    <img src="${a.img_url}" alt="${a.name}" style="max-width:25rem">
-    <ul class="flow">
-      <li><strong>Sex:</strong> ${a.sex}</li>
-      <li><strong>Breed:</strong> ${a.breed}</li>
-      <li><strong>Size:</strong> ${a.size}</li>
-      <li><strong>Age :</strong> ${a.age_in_month} + month</li>
-    </ul>
-    <p>${a.description}</p>
-    <p>${a.contact_info}</p>
-    <button class="button">Adopt ${a.name}</button>
-  `;
+
+    const profile = document.getElementById("profile");
+    profile.innerHTML =
+        `
+            <div class="profile-column">
+                <img src="${a.img_url}" alt="${a.name}">
+            </div>
+            <div class="profile-column">
+                <h1 class="fs-primary-heading | fw-bold">${a.name}</h1>
+                <ul class="info-list | bg-accent-100 | text-neutral-100" role="list">
+                    <li>Sex<br>${a.sex}</li>
+                    <li>Breed<br>${a.breed}</li>
+                    <li>Size<br>${a.size}</li>
+                    <li>Age<br>${a.age_in_month} months</li>
+                </ul>
+                <div class="profile-description">
+                    <p>${a.description}</p>
+                </div>
+                <p class="contact-info">
+                    Contact Info:<br>
+                    <a href="mailto:${a.contact_info}" class="text-primary-900">
+                        ${a.contact_info}
+                    </a>
+                </p>
+                <button class="button">Adopt ${a.name}</button>
+            </div>
+        `
 }
 
 function showError(msg) {
