@@ -33,10 +33,10 @@ function renderProfile(a) {
             <div class="profile-column">
                 <h1 class="fs-primary-heading | fw-bold">${a.name}</h1>
                 <ul class="info-list | bg-accent-100 | text-neutral-100" role="list">
-                    <li>Sex<br>${a.sex}</li>
-                    <li>Breed<br>${a.breed}</li>
-                    <li>Size<br>${a.size}</li>
-                    <li>Age<br>${a.age_in_month} months</li>
+                    <li>Sex:<br>${a.sex}</li>
+                    <li>Breed:<br>${a.breed}</li>
+                    <li>Size:<br>${a.size}</li>
+                    <li>Age:<br>${a.age_in_month} months</li>
                 </ul>
                 <div class="profile-description">
                     <p>${a.description}</p>
